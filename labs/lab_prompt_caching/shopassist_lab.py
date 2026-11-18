@@ -48,7 +48,7 @@ teaches you nothing.
 
 Call `lab_info()` for the full disclosure, including the known gaps.
 
-Licensed for use with the "Claude Certified Architect Foundations" course.
+Licensed for use with the course "Claude Certified Developer Professional: Complete Course".
 """
 
 from __future__ import annotations
@@ -1321,7 +1321,7 @@ def _reply_returns_policy(facts: PromptFacts) -> Optional[Tuple[str, str]]:
     return "policy.return_ok", reply
 
 
-#: The orders the course's practice scripts know (CCAR-F-practice README).
+#: The orders the course's practice scripts know (the practice repository's README).
 STORE_ORDERS: Dict[str, Dict[str, Any]] = {
     "ORD-12345678": {"item": "jacket", "status": "delivered", "delivered_days_ago": 20,
                      "price": 80},
@@ -2175,7 +2175,7 @@ def compose_after_tools(facts: PromptFacts, events: List[ToolEvent]) -> Optional
 
 IMAGE_MEDIA_TYPES = ("image/jpeg", "image/png", "image/gif", "image/webp")
 
-#: The label.png of the CCDV-F practice repository, read off the image once by hand.
+#: The label.png of the course's practice repository, read off the image once by hand.
 KNOWN_IMAGES: Dict[str, Dict[str, str]] = {
     "0f2a4bca199e04cb11a073fc45e97240e59c752231263e59271c4dfd7805cc0a": {"order_id": "ORD-12345678", "name": "Alex Morgan",
                       "address": "12 Harbour Lane", "city": "Dublin",
@@ -2655,8 +2655,7 @@ class MockMessages:
             raise BadRequestError(
                 'tool_choice {!r} is not supported by {}. The current Opus, Sonnet and '
                 'Fable models reject "any" and a forced tool: use "auto" with tools, or '
-                "output_config.format for structured output. (On the exam, forcing a "
-                "tool is still the answer the guide teaches.)".format(kind, model))
+                "output_config.format for structured output.".format(kind, model))
         if tool_list and kind in (None, "auto"):
             events = tool_history(messages)
             plan = plan_next(tool_list, facts, events)
@@ -5055,7 +5054,7 @@ def _task_coord_3(answer: Any, received: Any, **_: Any) -> Tuple[bool, str, str]
 
 
 # ===========================================================================
-# CCDV-F labs (Claude Certified Developer - Foundations)
+# Developer labs (ShopAssist)
 # ===========================================================================
 
 
